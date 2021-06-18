@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form List</title>
+    
+</head>
+<body>
+    
+    {% block content %}
+    <div class='container'>
+    <h3>CLEARANCE FORM</h3>
+        <p>
+            The Dean &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp;  Date:<br>
+            School of............<br>
+            Kathmandu University<br>
+            Dhulikhel, Kavre
+        </p>
+        <p>
+            Subject: Refund of the caution money,<br>
+            I have completed the .................. course and therefore request to refund my money deposited as per the attached. I have obtained the clearance from the concerned department as stated below:
+        </p>
+            <table class='table1'>
+                <tr>
+                    <th>Department</th>
+                    <th>Cleared By (Full Name)</th>
+                    <th>Date</th>
+                    <th>Clearance</th>
+                    <th>Sign</th>
+                </tr>
+                {% for instance in clearanceModels %}
+                    <tr>
+                        <td>{{instance.department}}</td>
+                        <td>{{instance.cleared_by}}</td>
+                        <td>{{instance.date}}</td>
+                        <td>{{instance.clearance}}</td>
+                        <td>{{instance.sign}}</td>
+                    </tr>
+                {% endfor %}
+            </table><br> 
+        <table class='table2'>
+            <tr>
+                <td>
+                    Exam Roll No.:<br>
+                    Registration No.:<br>
+                    Batch/Group:
+                </td>
+                <td>
+                    Student's Name:<br>
+                    Student's Signature:<br>
+                    &emsp;
+                    
+                </td>        
+            </tr>
+        </table>
+        <br>
+        <div class='container'>
+            <h6>(For Official Use Only)</h6>
+            <p>
+                The Finance &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;  Date:<br>
+                KU, Dhulikhel<br>
+                Please refund an amount of Rs. .................. of the caution money to the applicant.<br>
+            </p>
+            <p>
+                Dean/HOD ..........................................  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;  Signature ...................................... &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;  School of ..............................
+            </p>
+        </div>
+        
+    </div>        
+    {% endblock %}
+</body>
+</html>

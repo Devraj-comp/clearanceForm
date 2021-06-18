@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+    <title>clearance form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<body>
+    <!--Navbar-->
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+                <a class="navbar-brand" href="#">Navbar</a>
+                
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                {% if user.is_authenticated %}
+
+                
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">LOGOUT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'form' %}">FILL FORM</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'list' %}">GO-TO FORM</a>
+                </li>
+                <li class='nav-item'>
+                    <a class="nav-link" href="https://ku.edu.np/">KU</a>
+                </li>
+                <li class='nav-item'>
+                    <a class="nav-link" href="{% url 'home' %}">HOMEPAGE</a>
+                </li>
+                
+                {% else %}
+        
+                <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
+        
+                {% endif %}
+            </ul>
+            </div>
+        </nav>
+        <div class="col-md-10 offset-md-1 mt-5">
+            <div class="jumbotron">
+                
+                <!-- <p class="lead-font-italic">DJANGO-JINGA2 FORM FOR PARSER TAGGING</p> -->
+                <hr class="my-4">
+                {% block content %}
+                {% endblock content %}
+            </div>
+        </div>
+    </div>
+        
+    <P></P>
+
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+
+</body>
+</html>

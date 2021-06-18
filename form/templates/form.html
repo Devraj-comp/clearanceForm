@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Clearance Form</title>
+</head>
+<body>
+    {% block content %}
+
+    <h3>CLEARANCE FORM</h3>
+    <div class="container d-flex justify-content-center my-5">
+        <div class="row my-2 mx-2 main">
+            <div class="col-md-4 col-12 mycol">
+                <img src="{% static 'images/form2.jpg' %}">
+            </div>
+            <div class="col-md-8 col-12 xcol">
+                <form method="POST" action="{% url 'form' %}">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Department</label>
+                        <input type="text" class="form-control" name="department" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Cleared_By</label>
+                        <input type="text" class="form-control" name="cleared_by" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Date</label>
+                        <input type="date" class="form-control" name="date" id="exampleInputEmail1" aria-describedby="emailHelp">    
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Clearance</label>
+                        <input type="text" class="form-control" name="clearance" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Signature</label>
+                        <input type="text" class="form-control" name="sign" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <button type="submit" class="btn btn-outline-dark">Save</button>
+                    <br>
+                    <button type="button" class="btn btn-outline-dark"><a style="color: black;" href="{% url 'list' %}">Go-To FormList</a></button>
+                    
+                </form>
+            </div>
+            <h6 style="text-align: left;">Note: Please fill the form using the manual aside.</h6>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

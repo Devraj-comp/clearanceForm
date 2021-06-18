@@ -1,0 +1,50 @@
+table.table1 {
+    font-family: 'EB Garamond', serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+border: 1px solid #dddddd;
+text-align: left;
+padding: 8px;
+}
+
+p{
+    font-family: 'EB Garamond', serif;
+    padding: 0px;
+}
+table.table2{
+    font-family: 'EB Garamond', serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+.container{
+    border: 1px solid #dddddd;
+    
+}
+.row{
+    margin-top: 5px;
+}
+h6{
+    padding-top: 5px;
+    text-align: center;
+    font-family: 'EB Garamond', serif;
+}
+h3{
+    text-align: center;
+    font-family: 'EB Garamond', serif;
+}
+h5{
+    font-family: 'EB Garamond', serif;
+}
+.btn{
+    margin-top: 15px;
+}
+img{
+    height:auto;
+    width:100%;
+}
+.navbar-nav{
+    padding: 15px;
+}
